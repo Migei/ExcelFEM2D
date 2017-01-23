@@ -1,0 +1,100 @@
+<customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui" onLoad="olLoad_DNM">
+	<ribbon startFromScratch ="false">
+		<tabs>
+			<tab id="Tab1" label="RB Femset">
+				<group id="Gruppe1" label="Allgemein">
+					<button id="Gr1_But1" 
+									 label="Neues System" 
+									 imageMso="GetExternalDataFromText" 
+									 size="large" 
+										 onAction="Button_New_System" />
+					<button id="Gr1_But2" 
+									 label="System laden" 
+									 imageMso="FileOpen" 
+									 size="large" 
+										 onAction="Button_System_laden" />
+					<button id="Gr1_But3" 
+									 label="System speichern" 
+									 imageMso="FileSaveAs" 
+									 size="large" 
+										 onAction="Button_System_speichern" />					 
+				</group>
+				<group id="Gruppe2" label="Systemeingabe">
+					<button id="Gr2_But" 
+									 label="Neuer Knoten" 
+									 imageMso="DiagramTargetInsertClassic"
+									 size="large" 
+										 onAction="Button_New_Knoten" />
+					<button id="Gr2_But2" 
+									 label="Neuer Stab" 
+									 imageMso="ShapeStraightConnector"
+									 size="large" 
+										 onAction="Button_New_Stab" />
+					<button id="Gr2_But3" 
+									 label="Neues Auflager" 
+									 imageMso="ShapeIsoscelesTriangle"
+									 size="large" 
+										 onAction="Button_New_Auflager" />
+				</group>
+				<group id="Gruppe3" label="Lasteingabe">
+					<button id="Gr3_But" 
+									 label="Neuer Lastfall" 
+									 imageMso="WindowNew"
+									 size="large" 
+										 onAction="Button_New_Lastfall" />
+					<dropDown 
+						  id="Gr3_drp_Lastfälle"
+						  keytip="&amp;TN"
+						  label="Lastfall:"
+						  screentip="Lastfall auswählen"
+						  sizeString="WWWWWWWWWWW"
+						  tag="TS"
+						  getEnabled="drp_Lastfälle_getEnabled"
+						  getItemCount="drp_Lastfälle_getItemCount"
+						  getItemID="drp_Lastfälle_getItemID"
+						  getItemLabel="drp_Lastfälle_getItemLabel"
+						  getSelectedItemIndex="drp_Lastfälle_getSelectedItemIndex"
+						  onAction="drp_Lastfälle_OnAction" />
+					<button id="Gr3_but_delete_LF"
+									label="LF löschen"
+									imageMso="AdpDiagramDeleteTable"
+									size="normal"
+										getEnabled="Button_delete_LF_getEnabled"
+										onAction="Button_deleteLF_onAction" />
+					<button id="Gr3_but_calculate_LF"
+									label="LF berechnen"
+									imageMso="Calculator"
+									size="normal"
+										getEnabled="Button_calculateLF_getEnabled"
+										onAction="Button_calculateLF_onAction" />
+					<button id="Gr3_But2" 
+									 label="Neue Knotenlast" 
+									 imageMso="OutlineMoveDown"
+									 size="large" 
+										 onAction="Button_New_Knotenlast" />
+					<button id="Gr3_But3" 
+									 label="Neue Stablast" 
+									 imageMso="TextDirectionOptionsDialog"
+									 size="large" 
+										 onAction="Button_New_Stablast" />
+				</group>
+			</tab>
+		</tabs>
+	</ribbon>
+	<backstage></backstage>
+	<contextMenus>
+	  
+	<contextMenu idMso="ContextMenuShape">
+       <dynamicMenu id="dmnu0" label="Knoten" insertBeforeMso="Cut" imageMso="AccessFormDatasheet" tag="tag_Knoten" getContent="GetContent_Menu0" />
+	</contextMenu>
+	
+	<contextMenu idMso="ContextMenuShapeConnector">
+       <dynamicMenu id="dmnu1" label="Stab" insertBeforeMso="Cut" imageMso="AccessFormDatasheet" tag="tag_Stab" getContent="GetContent_Menu1" />
+	</contextMenu>
+	
+	<contextMenu idMso="ContextMenuChartArea">
+       <dynamicMenu id="dmnu2" label="RB FEMSET" insertBeforeMso="Cut" imageMso="AccessFormDatasheet" tag="tag_Stab" getContent="GetContent_Menu2" />
+	</contextMenu>
+	
+    </contextMenus>
+</customUI>
